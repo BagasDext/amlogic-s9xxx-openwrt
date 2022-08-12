@@ -13,11 +13,11 @@ inputs:
   openwrt_soc:
     description: "Choose Amlogic SoC."
     required: false
-    default: "s905d_s905x3"
+    default: "s905x2"
   openwrt_kernel:
     description: "Choose kernel version."
     required: false
-    default: "5.15.25_5.10.100"
+    default: "5.18.17_5.15.25"
   auto_kernel:
     description: "Auto use the latest kernel."
     required: false
