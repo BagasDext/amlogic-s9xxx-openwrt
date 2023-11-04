@@ -192,7 +192,7 @@ env:
   CONFIG_FILE: config/${{ inputs.source_branch }}/config
   DIY_P1_SH: config/${{ inputs.source_branch }}/diy-part1.sh
   DIY_P2_SH: config/${{ inputs.source_branch }}/diy-part2.sh
-  TZ: America/New_York
+  TZ: Asia/Jakarta
 
 jobs:
   build:
@@ -234,8 +234,8 @@ jobs:
               REPO_BRANCH="main"
               TAGS_NAME="official"
           elif [[ "${{ inputs.source_branch }}" == *"lede"* ]]; then
-              REPO_URL="https://github.com/coolsnowwolf/lede"
-              REPO_BRANCH="master"
+              REPO_URL="https://github.com/istoreos/istoreos"
+              REPO_BRANCH="istoreos-22.03"
               TAGS_NAME="lede"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt"* ]]; then
               REPO_URL="https://github.com/immortalwrt/immortalwrt"
@@ -348,7 +348,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           body: |
             ### OpenWrt Image information
-            - Default IP: 192.168.1.1
+            - Default IP: 192.168.100.1
             - Default username: root
             - Default password: password
             - Default WIFI name: OpenWrt
