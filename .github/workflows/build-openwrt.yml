@@ -234,7 +234,7 @@ jobs:
               REPO_BRANCH="main"
               TAGS_NAME="official"
           elif [[ "${{ inputs.source_branch }}" == *"lede"* ]]; then
-              REPO_URL="https://github.com/coolsnowwolf/lede"
+              REPO_URL="https://github.com/BagasDext/lede"
               REPO_BRANCH="master"
               TAGS_NAME="lede"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt"* ]]; then
@@ -269,6 +269,15 @@ jobs:
       - name: Install feeds
         run: cd openwrt/ && ./scripts/feeds install -a
 
+      - name: Install nas_luci
+        run: cd openwrt/ && ./scripts/feeds install -a -p nas
+
+      - name: Install nas_pkg
+        run: cd openwrt/ && ./scripts/feeds install -a -p nas_luci
+
+      - name: iStoreOS
+        run: cd openwrt/ && ./scripts/feeds install -d y -p istore luci-app-store
+        
       - name: Load custom configuration
         run: |
           [[ -d "files" ]] && mv -f files openwrt/files
