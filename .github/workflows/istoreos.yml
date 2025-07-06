@@ -12,7 +12,7 @@ on:
       source_branch:
         description: "Select the source branch"
         required: false
-        default: "istoreos"
+        default: "immortalwrt-master"
         type: choice
         options:
           - istoreos
