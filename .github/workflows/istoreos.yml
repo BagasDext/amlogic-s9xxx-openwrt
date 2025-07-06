@@ -12,16 +12,16 @@ on:
       source_branch:
         description: "Select the source branch"
         required: false
-        default: "openwrt-main"
+        default: "istoreos"
         type: choice
         options:
-          - openwrt-main
+          - istoreos
           - lede-master
           - immortalwrt-master
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "all"
+        default: "s905x2"
         type: choice
         options:
           - all
@@ -138,7 +138,7 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "5.15.1_6.1.1"
+        default: "6.1.1"
         type: choice
         options:
           - 5.4.1_5.10.1
@@ -162,7 +162,7 @@ on:
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
-        default: "stable"
+        default: "dev"
         type: choice
         options:
           - stable
